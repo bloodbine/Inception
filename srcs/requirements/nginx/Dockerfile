@@ -8,6 +8,8 @@ RUN apt-get update \
 COPY conf/nginx.conf /etc/nginx/sites-available/nginx.conf
 COPY conf/nginx-entry.sh .
 
+RUN chmod +x ./nginx-entry.sh
+
 ENTRYPOINT [ "./nginx-entry.sh" ]
 
 CMD ["nginx", "-g", "daemon off;"]

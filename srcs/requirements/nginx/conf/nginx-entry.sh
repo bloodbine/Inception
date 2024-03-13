@@ -12,3 +12,5 @@ if [ ! -f /etc/nginx/ssl/nginx.key ];
 	sed -ie 's/gzip on;gzip off;/g' /etc/nginx/nginx.conf
 
 fi;
+
+exec $@

@@ -1,6 +1,11 @@
 FROM debian:bullseye
 
-RUN apt-get update && apt-get install -y wordpress openssl && rm -rf /var/lib/apt/lists*
+RUN apt-get update \
+	&& apt-get install -y php-fpm php-mysql curl mariadb-client \
+	&& apt-get clean
 
-EXPOSE 9000
+COPY ./conf/ /
 
+RUN chmod +x /wordpress-setup.sh
+
+# EXPOSE 9000

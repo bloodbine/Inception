@@ -12,6 +12,5 @@ RUN mkdir /run/mysqld
 RUN mkdir /var/lib/mysql
 RUN mariadb-install-db --user=root -datadir=/var/lib/mysql --skip-test-db
 
-EXPOSE 3306
-ENTRYPOINT [ "" ]
+# EXPOSE 3306
 CMD [ "exec", "mariadbd --no-defaults --user=root --datadir=/var/lib/mysql --init-file=/database.sql" ]

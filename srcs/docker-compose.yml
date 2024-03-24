@@ -9,13 +9,13 @@ volumes:
     driver_opts:
       type: none
       o: bind
-      device: /home/gpasztor/Inception/srcs/requirements/wordpress
+      device: /home/gpasztor/Inception/srcs/requirements/wordpress/data
   mariadb_data:
     driver: local
     driver_opts:
       type: none
       o: bind
-      device: /home/gpasztor/Inception/srcs/requirements/mariadb
+      device: /home/gpasztor/Inception/srcs/requirements/mariadb/data
 services:
   mariadb:
     build:

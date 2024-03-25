@@ -1,8 +1,8 @@
 FROM debian:bullseye
 
-RUN apt-get update\
-	&& apt-get install -y mariadb-server mariadb-client\
-	&& apt-get clean
+RUN apt update\
+	&& apt install -y mariadb-server\
+	&& apt clean
 
 COPY conf/my.cnf /usr/local/bin/my.cnf
 COPY conf/database.sql /database.sql

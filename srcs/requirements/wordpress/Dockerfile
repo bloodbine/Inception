@@ -1,11 +1,12 @@
 FROM debian:bullseye
 
-RUN apt-get update \
-	&& apt-get install -y php-fpm php-mysql curl mariadb-client \
-	&& apt-get clean
+RUN apt update \
+	&& apt install -y php-fpm php-mysql curl mariadb-client \
+	&& apt clean
 
-COPY ./conf/ /
+COPY ./conf/wordpress-setup.sh /wordpress-setup.sh
+COPY ./conf/www.conf /www.conf
 
 RUN chmod +x /wordpress-setup.sh
 
-# EXPOSE 9000
+ENTRYPOINT ["./wordpress-setup.sh"]

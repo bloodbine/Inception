@@ -5,4 +5,4 @@ sed -i "s/\${DATABASE_ROOT_PWD}/$DATABASE_ROOT_PWD/g"	/database.sql
 
 mysql_install_db --user=mysql --datadir=/var/lib/mysql
 
-exec mariadbd --no-defaults --user=root --datadir=/var/lib/mysql --init-file=/create_db.sql
+exec mariadbd --no-defaults --user=root --datadir=/var/lib/mysql --init-file=/database.sql

@@ -13,7 +13,7 @@ if [ ! -f /var/www/html/wp-config.php ]; then
 	wp user create $WORDPRESS_USER $WORDPRESS_EMAIL --role=author --user_pass=$WORDPRESS_PWD --allow-root --porcelain
 fi
 
-cp /www.conf /etc/php/7.3/fpm/pool.d/www.conf
+cp /www.conf /etc/php/7.4/fpm/pool.d/www.conf
 mkdir -p /run/php
 
-/usr/sbin/php-fpm7.3 -F
+/usr/sbin/php-fpm7.4 -F

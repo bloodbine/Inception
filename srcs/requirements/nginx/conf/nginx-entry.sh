@@ -11,6 +11,7 @@ if [ ! -f /etc/nginx/ssl/nginx.key ]; then
     cat /etc/nginx/sites-available/nginx.conf
     ln -s /etc/nginx/sites-available/nginx.conf /etc/nginx/sites-enabled/
     sed -i 's/gzip on;/gzip off;/g' /etc/nginx/nginx.conf
+    echo "127.0.0.1 $WEBSITE_DOMAIN" >> /etc/hosts
 fi
 
 nginx -g 'daemon off;'

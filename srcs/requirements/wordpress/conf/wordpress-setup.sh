@@ -9,7 +9,7 @@ if [ ! -f /var/www/html/wp-config.php ]; then
 	wp core download --allow-root
 	wp config create --dbname=$DATABASE_NAME --dbuser=$DATABASE_USER --dbpass=$DATABASE_USER_PWD --dbhost=$DATABASE_HOST --allow-root
 
-	wp core install --url=$WEBSITE_DOMAIN --title=$WORDPRESS_TITLE --admin_user=$WORDPRESS_ADMIN_USER --admin_password=$WORDPRESS_ADMIN_PWD --admin_email=$WORDPRESS_ADMIN_EMAIL --skip-email --allow-root
+	wp core install --url=$WEBSITE_DOMAIN/ --title=$WORDPRESS_TITLE --admin_user=$WORDPRESS_ADMIN_USER --admin_password=$WORDPRESS_ADMIN_PWD --admin_email=$WORDPRESS_ADMIN_EMAIL --skip-email --allow-root
 	wp user create $WORDPRESS_USER $WORDPRESS_EMAIL --role=author --user_pass=$WORDPRESS_PWD --allow-root --porcelain
 fi
 

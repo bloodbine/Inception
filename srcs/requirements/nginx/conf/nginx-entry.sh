@@ -10,7 +10,7 @@ if [ ! -f /etc/nginx/ssl/nginx.key ]; then
     sed -i 's/$WEBSITE_DOMAIN/'"$WEBSITE_DOMAIN"'/g' /etc/nginx/sites-available/nginx.conf
     cat /etc/nginx/sites-available/nginx.conf
     ln -s /etc/nginx/sites-available/nginx.conf /etc/nginx/sites-enabled/
-    sed -i 's/gzip on;/gzip off;/g' /etc/nginx/nginx.conf
+    # sed -i 's/gzip on;/gzip off;/g' /etc/nginx/nginx.conf
     echo "127.0.0.1 $WEBSITE_DOMAIN" >> /etc/hosts
 fi
 

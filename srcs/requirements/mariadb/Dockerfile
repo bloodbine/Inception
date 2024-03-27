@@ -10,7 +10,7 @@ COPY tools/entrypoint.sh /entrypoint.sh
 
 RUN mkdir -p /run/mysqld
 RUN mkdir -p /var/lib/mysql
-RUN mariadb-install-db --user=root -datadir=/var/lib/mysql --skip-test-db
 
-# EXPOSE 3306
-CMD ["sh", "entrypoint.sh"]
+RUN chmod +x ./entrypoint.sh
+
+ENTRYPOINT ["./entrypoint.sh"]

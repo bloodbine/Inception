@@ -5,7 +5,6 @@ if [ ! -f /var/www/html/wp-config.php ]; then
 	chmod +x wp-cli.phar
 	mv wp-cli.phar /usr/local/bin/wp
 
-	sleep 30
 	wp core download --allow-root
 	wp config create --dbname=$DATABASE_NAME --dbuser=$DATABASE_USER --dbpass=$DATABASE_USER_PWD --dbhost=$DATABASE_HOST --allow-root
 

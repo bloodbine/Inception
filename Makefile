@@ -6,7 +6,7 @@ stop:
 	docker compose -f ./srcs/docker-compose.yml down
 
 clean: stop
-	docker rm $(docker ps -qa);
-	docker rmi -f $(docker images -qa);
-	docker volume rm $(docker volume ls -q);
-	docker network rm $(docker network ls -q) 2>/dev/null
+	docker rmi -f srcs-mariadb srcs-wordpress srcs-nginx
+	docker volume rm -f srcs_mariadb_data srcs_wordpress_data
+	docker network rm -f srcs_inception
+	sudo rm -rf /home/gpasztor/data*
